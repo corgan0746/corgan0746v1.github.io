@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Printers</title>
+<meta charset="utf-8">
+<style>
+#gallery {position:relative; width:400px;}
+#gallery ul {list-style-type:none;}
+#gallery li {display:inline-block; margin:2px;}
+#gallery a {text-decoration:none;}
+#gallery span{
+              position:absolute;
+              left: 500px;
+              top: 150px;
+              transition: opacity 1s;
+              opacity: 0;
+              
+              }
+#staticimage {
+              display: block;
+              position:absolute;
+              content: " ";
+              height:500px; 
+              width:600px;
+              left: 500px;
+              top: 150px;
+              opacity: 1;} 
+             
+            
+#gallery a:hover span {display:block;
+    transition: opacity 1s;
+                       
+                       opacity:1;
+                       }
+
+#oneimage {position:absolute;
+           top: 300px;
+           left: 10px;
+           height: 300px;
+           width: 500px;
+           display: block;
+           transition: left 1s;
+           }      
+                 
+</style>
+<script>
+    function oli () {
+        var a = document.getElementById("oneimage").style.left.valueOf();
+        if (a == "10px" ){
+    document.getElementById("oneimage").style.left=620 + "px";
+    document.getElementById("oneimage").style.transition=left + "1s";
+    
+        }    else{
+            document.getElementById("oneimage").style.left=10 + "px";
+            
+        }
+}
+    
+
+
+</script>
+</head>
+<body>
+<h1>Printers Minters</h1>
+<div id="gallery">
+    
+    <ul>
+    
+        <li><a href="photo1.jpg"><img src="photo1.jpg" height="100px" width="150px"><span><img src="photo1.jpg" height="500px" width="600px"></span></a></li>
+        <li><a href="photo2.jpg"><img src="photo2.jpg" height="100px" width="150px"><span><img src="photo2.jpg" height="500px" width="600px"></span></a></li>
+        <li><a href="photo3.jpg"><img src="photo3.jpg" height="100px" width="150px"><span><img src="photo3.jpg" height="500px" width="600px"></span></a></li>
+        <li><a href="photo4.jpg"><img src="photo4.jpg" height="100px" width="150px"><span><img src="photo4.jpg" height="500px" width="600px"></span></a></li>
+        
+    </ul>
+    <p><img id="oneimage" src="5.jpg" alt="edward" onclick="oli()"></p>
+    <div id="staticimage"></div>
+    <button onclick="oli()">Change</button>
+</div>
+</body>
+</html>
